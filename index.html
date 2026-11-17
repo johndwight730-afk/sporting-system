@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173b4c">
+    <meta name="description" content="Amazing Grace Digital Sport Management System">
+    <title>Amazing Grace Digital Sport Management System</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="amazing-grace-logo.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/app-icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Amazing Grace Sports">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <script src="qr.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <section id="maintenanceView" class="maintenance-screen" aria-live="polite">
+        <div class="maintenance-card">
+          <img class="maintenance-logo" src="amazing-grace-logo.svg" alt="">
+          <span class="eyebrow">SYSTEM STATUS</span>
+          <h1 id="maintenanceHeadline">Checking system availability…</h1>
+          <p id="maintenanceMessage">Please wait while we check whether the system is open.</p>
+          <button type="button" class="button button-dark" data-action="show-admin-unlock" hidden>Login as Master Admin</button>
+          <form id="masterAdminUnlockForm" class="maintenance-unlock-form" hidden>
+            <label>Master Admin username<input name="username" required autocomplete="username"></label>
+            <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
+            <button type="submit" class="button button-dark">Turn system on</button>
+          </form>
+        </div>
+      </section>
+      <div class="background-slideshow" aria-hidden="true">
+        <img class="active" src="photo/athletics-01.jpg" alt="">
+        <img src="photo/athletics-02.jpg" alt="">
+        <img src="photo/athletics-03.jpg" alt="">
+        <img src="photo/athletics-04.jpg" alt="">
+        <img src="photo/athletics-05.jpg" alt="">
+        <img src="photo/athletics-06.jpg" alt="">
+        <img src="photo/athletics-07.jpg" alt="">
+        <img src="photo/athletics-08.jpg" alt="">
+        <img src="photo/athletics-09.jpg" alt="">
+        <img src="photo/athletics-10.jpg" alt="">
+      </div>
+      <section id="authView" class="auth-screen" hidden>
+        <div class="auth-art">
+          <a class="brand brand-light" href="#" aria-label="Amazing Grace Digital Sport Management System"><span class="brand-mark"><img class="brand-logo" src="amazing-grace-logo.svg" alt=""></span><span class="brand-copy"><strong>Amazing Grace Digital</strong><small>Sport Management System</small></span></a>
+          <div class="art-copy">
+            <span class="eyebrow">THE SEASON STARTS HERE</span>
+            <h1>Make every<br>moment <em>count.</em></h1>
+            <p>One home for your sporting events, house points, and the people who make it all happen.</p>
+            <blockquote class="auth-verse"><p>“But by the grace of God I am what I am”</p><cite>— 1 Corinthians 15:10</cite></blockquote>
+          </div>
+          <div class="art-foot"><span>01 — 04</span><span>Built for the spirit of sport</span></div>
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        </div>
+        <div class="auth-panel">
+          <div class="auth-mobile-brand"><span class="brand-mark"><img class="brand-logo" src="amazing-grace-logo.svg" alt=""></span><span class="brand-copy"><strong>Amazing Grace Digital</strong><small>Sport Management System</small></span></div>
+          <div class="auth-box">
+            <div class="auth-navigation"><div class="auth-switch"><button class="auth-tab active" data-auth="login">Sign in</button><button class="auth-tab" data-auth="register">Create account</button></div><div class="auth-actions"><button type="button" class="auth-about-button" data-action="open-about">About this system</button><button type="button" class="install-app-button" id="authInstallButton" data-action="install-app" hidden>Install app</button></div></div>
+            <div id="loginFormWrap">
+              <span class="eyebrow">WELCOME BACK</span>
+              <h2>Sign in to your account</h2>
+              <p class="muted">Pick up where your team left off.</p>
+              <form id="loginForm" class="form-stack">
+                <label>Username<input name="username" autocomplete="username" required placeholder="Your username"></label>
+                <label>Password<input name="password" type="password" autocomplete="current-password" required placeholder="Your password"></label>
+                <label>Role<select name="role" required><option value="" disabled selected>Select your role</option><option>Master Admin</option><option>House Master</option><option>Field Recorder</option></select></label>
+                <button class="button button-dark button-wide" type="submit">Sign in <span>→</span></button>
+              </form>
+              <div class="demo-note">New here? Create an account and ask your Master Admin to approve it.</div>
+            </div>
+            <div id="registerFormWrap" hidden>
+              <span class="eyebrow">JOIN YOUR COMMUNITY</span>
+              <h2>Create your account</h2>
+              <p class="muted">The first account is automatically approved as Master Admin. Later accounts need admin approval.</p>
+              <form id="registerForm" class="form-stack">
+                <label>Full name<input name="fullName" required autocomplete="name" placeholder="e.g. Alex Morgan"></label>
+                <label>Email address<input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+                <label>Username<input name="username" required autocomplete="username" placeholder="Choose a username"></label>
+                <div class="form-row">
+                  <label>Password<input name="password" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters"></label>
+                  <label>Confirm password<input name="confirmPassword" type="password" required minlength="8" autocomplete="new-password" placeholder="Repeat password"></label>
+                </div>
+                <label>Role<select name="role" required><option value="" disabled selected>Select your role</option><option>Master Admin</option><option>House Master</option><option>Field Recorder</option></select></label>
+                <button class="button button-dark button-wide" type="submit">Create account <span>→</span></button>
+              </form>
+            </div>
+          </div>
+          <div class="auth-copyright">AMAZING GRACE DIGITAL SPORT MANAGEMENT SYSTEM <span>© 2026</span></div>
+        </div>
+      </section>
+      <section id="dashboardView" class="dashboard" hidden>
+        <button type="button" id="navBackdrop" class="nav-backdrop" aria-label="Close navigation" hidden></button>
+        <aside class="sidebar">
+          <a class="brand" href="#" data-page="home" aria-label="Amazing Grace Digital Sport Management System"><span class="brand-mark"><img class="brand-logo" src="amazing-grace-logo.svg" alt=""></span><span class="brand-copy"><strong>Amazing Grace Digital</strong><small>Sport Management System</small></span></a>
+          <div class="workspace-label">WORKSPACE</div>
+          <nav id="mainNav" class="main-nav">
+            <button class="nav-link active" data-page="home"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span>Home</button>
+            <button class="nav-link" data-page="points"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/><circle cx="12" cy="12" r="9"/></svg></span>Enter point</button>
+            <button class="nav-link" data-page="results"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg></span>Results</button>
+            <button class="nav-link" data-page="liveScore"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span>Live Score</button>
+            <button class="nav-link" data-page="certificates"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h7"/><path d="m8 3-3 3"/></svg></span>Certificates</button>
+            <button class="nav-link" data-page="about"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg></span>About</button>
+            <div class="nav-divider"></div>
+            <button class="nav-link admin-only" data-page="admin"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42m-9.88 9.88-1.42 1.42"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>Admin control panel</button>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="sidebar-help"><span>?</span><div><b>Need a hand?</b><small>Ask your administrator</small></div></div>
+            <button type="button" class="profile-button" data-action="open-profile"><span class="avatar avatar-small" id="sideAvatar">F</span><span class="user-mini"><b id="sideName">User</b><small id="sideRole">Role</small></span><span class="logout-arrow">⚙</span></button>
+            <button type="button" id="logoutButton" class="logout-button"><span class="logout-icon">↪</span><span>Sign out</span></button>
+          </div>
+        </aside>
+        <main class="main-area">
+          <header class="topbar"><div class="topbar-left"><button type="button" class="menu-toggle" id="navToggleButton" aria-controls="mainNav" aria-expanded="true" aria-label="Close navigation" title="Close navigation">☰</button><div class="breadcrumb"><img id="schoolCrumbLogo" class="school-crumb-logo" data-school-logo alt="School logo" hidden><span id="schoolCrumbName">Workspace</span><b>/</b><strong id="pageCrumb">Home</strong></div></div><div class="topbar-right"><span class="live-dot"></span><span id="connectionLabel">Connected</span><button class="icon-button" id="refreshButton" title="Refresh data" aria-label="Refresh data">↻</button><button type="button" class="install-app-button dashboard-install-button" id="dashboardInstallButton" data-action="install-app" hidden>Install app</button><button type="button" class="icon-button" id="themeToggleButton" aria-label="Switch to light theme" title="Switch to light theme">☼</button><button type="button" class="top-profile-button" data-action="open-profile" aria-label="Open profile"><span class="avatar" id="topAvatar">F</span><span id="topProfileName">User</span></button></div></header>
+          <div id="pageContent" class="page-content"></div>
+        </main>
+      </section>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <aside id="installPromptBanner" class="install-prompt-banner" aria-live="polite" hidden>
+        <div><b>Install Amazing Grace Digital</b><span>Open your sports system like an app on this device.</span></div>
+        <button type="button" class="button button-dark" data-action="install-app">Install app</button>
+        <button type="button" class="install-prompt-dismiss" data-action="dismiss-install-prompt" aria-label="Dismiss install suggestion">×</button>
+      </aside>
+      <div id="modalRoot"></div>
+      <div id="printStage" hidden></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Amazing Grace Digital Sport Management System</title>
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1b4960"/>
+      <stop offset="1" stop-color="#102c3c"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#2e805c"/>
+      <stop offset="1" stop-color="#18533f"/>
+    </linearGradient>
+  </defs>
+  <path d="M256 18 471 96v141c0 122-79 209-215 257C120 446 41 359 41 237V96z" fill="url(#shield)" stroke="#d7ae49" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M256 44 445 112v125c0 104-64 181-189 230-125-49-189-126-189-230V112z" fill="none" stroke="#f4e3a8" stroke-opacity=".72" stroke-width="4"/>
+  <circle cx="256" cy="191" r="111" fill="#d7ae49" fill-opacity=".14"/>
+  <path d="M232 86h48v78h78v48h-78v95h-48v-95h-78v-48h78z" fill="#fffdf5"/>
+  <path d="M95 339c39-37 91-56 161-56s122 19 161 56v49c-45-36-99-54-161-54s-116 18-161 54z" fill="url(#field)" stroke="#d7ae49" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M123 352c35-21 79-32 133-32s98 11 133 32M112 373c39-21 87-32 144-32s105 11 144 32" fill="none" stroke="#f8f3df" stroke-opacity=".92" stroke-width="7" stroke-linecap="round"/>
+  <path d="M256 359v46" fill="none" stroke="#d7ae49" stroke-width="7" stroke-linecap="round"/>
+</svg>
